@@ -156,6 +156,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 | 0x41         | Jmp              | Index              | Jump to code[index]        |
 | 0x42         | Jmp_if_false     | Index              | Branch to code[index] if `R0` is `false` (0) |
 | 0x43         | Jmp_if_true      | Index              | Branch to code[index] if `R0` is `true` (1) |
+|              |                  |                    | Only used for DoWhile (Backward jump) and switch case statement (Forward jump) |
 | 0x44         | To_Int           | Register Number    | Convert string register[register_num] to int and return the value to register[register_num] |
 | 0x45         | Break            | Depth              | Break from a control flow structure at x depth, this instruction don't appear in release binary |
 |              |                  |                    | and is converted to a JMP instead |
