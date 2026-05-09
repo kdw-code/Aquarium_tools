@@ -101,7 +101,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
-|              |                  |                    | `int_var += value` |
+|              |                  |                    | `int_var -= value` |
 | 0x32         | Assign_mul           | Index              | Multiply `value` to variable located at `index`  |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
