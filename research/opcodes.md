@@ -87,7 +87,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 |              |                  |                    | Note that when a Macro is used to call multiple functions the same `line number` will repeat |
 | 0x2D         | Sar              | None               | Shift Arithmetic Right operation: `R0 = R1 >> R0` |
 | 0x2E         | Shl              | None               | Shift Logical Left operation: `R0 = R1 << R0` |
-| 0x2F         | Shr              | None               | Shift Logical Right operation: `R0 = (u32)R1 >> R0` |
+| 0x2F         | Shr              | None               | Shift Logical Right operation: `R0 = R1 >>> R0` |
 | 0x30         | Assign_add           | Index              | Add/Append value to variable located at index |
 |              |                  |                    | It works exactly like the store instruction, so please look at Store instruction for more details |
 |              |                  |                    | if index >= 0 it's an number operation |
@@ -148,7 +148,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = (u32)GET_INT_VARIABLE(index);` |
-|              |                  |                    | `int_var >>= value` |
+|              |                  |                    | `int_var >>>= value` |
 | 0x3F         | To_String        | Register Number    | Convert int `registers[register_num]` to string and return the variable index to `registers[register_num]` |
 | 0x40         | Return           | Type               | Return the value, `R0` is the register that contains the return value, if the return type is a `string` a temp string variable is created and the index is set into `R0`, if it's just an `int` then nothing happen the value already in `R0` is the value that gets returned. |
 |              |                  |                    | type 0 (`number`) |
