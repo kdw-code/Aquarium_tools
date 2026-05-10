@@ -82,7 +82,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 | 0x29         | Label            | Index              | Create a goto label. When a JMP instruction target is this instruction |
 |              |                  |                    | it means the goto keyword was used and that the jmp isn't created using higher level control flow |
 | 0x2A         | Goto             | Index              | Jump to the label. This instruction never appear in release bin as the instruction is converted to JMP |
-| 0x2B         | Cmp_Zero         | None               | Compare zero operation: `R0 = R0 == 0` |
+| 0x2B         | Not              | None               | Logical Not operation: `R0 = !R0` |
 | 0x2C         | Lineno           | Value              | Set the `line number` of the current `statement`, only used in `main_script` when debug mode is ON which is the case most of the time |
 |              |                  |                    | Note that when a Macro is used to call multiple functions the same `line number` will repeat |
 | 0x2D         | Sar              | None               | Shift Arithmetic Right operation: `R0 = R1 >> R0` |
