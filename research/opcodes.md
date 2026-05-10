@@ -49,7 +49,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 | 0x11         | Bit_Or           | None               | Bitwise Or operation: `R0 = R0 \| R1` |
 | 0x12         | Bit_And          | None               | Bitwise And operation: `R0 = R0 & R1` |
 | 0x13         | Xor              | None               | Xor operation: `R0 = R0 ^ R1` |
-| 0x14         | Not              | None               | Not operation: `R0 = !R0` |
+| 0x14         | Bit_Not          | None               | Not operation: `R0 = ~R0` |
 | 0x15         | Cmp_Le           | None               | Compare less or equal operation: `R0 = R0 <= R1` |
 | 0x16         | Cmp_Ge           | None               | Compare greater or equal operation: `R0 = R0 >= R1` |
 | 0x17         | Cmp_Lt           | None               | Compare less than operation: `R0 = R0 < R1` |
