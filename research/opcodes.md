@@ -48,7 +48,7 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 | 0x10         | And              | None               | And operation: `R0 = R0 && R1` |
 | 0x11         | Bit_Or           | None               | Bitwise Or operation: `R0 = R0 \| R1` |
 | 0x12         | Bit_And          | None               | Bitwise And operation: `R0 = R0 & R1` |
-| 0x13         | Xor              | None               | Xor operation: `R0 = R0 ^ R1` |
+| 0x13         | Bit_Xor          | None               | Bitwise Xor operation: `R0 = R0 ^ R1` |
 | 0x14         | Bit_Not          | None               | Bitwise Not operation: `R0 = ~R0` |
 | 0x15         | Cmp_Le           | None               | Compare less or equal operation: `R0 = R0 <= R1` |
 | 0x16         | Cmp_Ge           | None               | Compare greater or equal operation: `R0 = R0 >= R1` |
@@ -102,34 +102,34 @@ I am still not understanding opcode 0x49, but i have a few idea. It will be easi
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var -= value` |
-| 0x32         | Assign_mul           | Index              | Multiply `value` to variable located at `index`  |
+| 0x32         | Assign_mul       | Index              | Multiply `value` to variable located at `index`  |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var *= value` |
-| 0x33         | Assign_div           | Index              | Divide `value` to variable at `index` |
+| 0x33         | Assign_div       | Index              | Divide `value` to variable at `index` |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `if(value == 0) return ERROR` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var /= value` |
-| 0x34         | Assign_mod           | Index              | Mod `value` to variable at `index` |
+| 0x34         | Assign_mod       | Index              | Mod `value` to variable at `index` |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `if(value == 0) return ERROR` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var %= value` |
-| 0x35         | Assign_or            | Index              | Or `value` to variable at `index` |
+| 0x35         | Assign_bit_or    | Index              | Bitwise Or `value` to variable at `index` |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var \|= value` |
-| 0x36         | Assign_and           | Index              | And `value` to variable at `index` |
+| 0x36         | Assign_bit_and   | Index              | Bitwise And `value` to variable at `index` |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
 |              |                  |                    | `int_var &= value` |
-| 0x37         | Assign_xor           | Index              | Xor `value` to variable at `index` |
+| 0x37         | Assign_bit_xor   | Index              | Bitwise Xor `value` to variable at `index` |
 |              |                  |                    | if operand == -1, it means the index point to an array element `R0` contains the `index` and `R1` contains the `value` |
 |              |                  |                    | Else `operand` contains the `index` and `R0` contains the `value` |
 |              |                  |                    | `int_var = GET_INT_VARIABLE(index);` |
